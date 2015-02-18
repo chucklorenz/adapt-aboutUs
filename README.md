@@ -50,6 +50,20 @@ A list of any number of title/description pairs that appears between the company
 >#####description
 >The text that appears below the `title`. It is open and closed when the user clicks on its `title`. HTML is acceptable.
 
+####_socialLinks
+Optional icons linked to social media/networking accounts.
+>_service
+>The name of the social media service. The extension's code will link the `_service` to its icon; therefore, it must be spelled exactly as it appears in this list:
+>Supported Services
+Twitter|Facebook|LinkedIn
+GooglePlus|YouTube|Pinterest
+Instagram|Vimeo|flickr
+Picasa|Lanyrd|DeviantArt
+Steam|Blogger|Tumblr
+SoundCloud|XING|feed
+>_link
+>
+
 ##Installation
 
 First, be sure to install the [Adapt Command Line Interface](https://github.com/adaptlearning/adapt-cli), then from the command line run:-
