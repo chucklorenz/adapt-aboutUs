@@ -1,6 +1,6 @@
 {
   "name": "adapt-aboutUs",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "An Adapt extension that adds to the drawer information about the sponsoring organization",
   "main": "",
   "scripts": {
