@@ -1,6 +1,7 @@
 #adapt-aboutUs
 
 An Adapt extension that adds to the Drawer information about the sponsoring organization.
+![An example of the aboutUs extension.](https://github.com/chucklorenz/adapt-aboutUs/raw/master/clip.png "example aboutUs"):
 
 ##In Progress.
 
