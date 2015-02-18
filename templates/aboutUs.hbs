@@ -1,9 +1,11 @@
 {{! Maintainer - Chuck Lorenz <chucklorenz@yahoo.com>}}
 <div class="aboutus-inner">
     <div class="aboutus-header-container">
-        <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" title="{{_graphic.title}}"/>
+        {{#if _graphic.src}}
+            <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" title="{{_graphic.title}}"/>
+        {{/if}}
         <div class="aboutus-headline-container">
-            <h5 class="aboutus-headline">{{{headline}}}</h5>
+            <h5 class="aboutus-headline" {{#unless _graphic.src}}width="100%"{{/unless}}>{{{headline}}}</h5>
         </div>
     </div>
     <div class="aboutus-items-container">
