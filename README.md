@@ -39,7 +39,16 @@ The optional image that appears to the left of the organization's name (i.e., th
 >#####title
 >The content of image's `title` attribute.
 
+####headline
+The text of the first line that appears to the right of the optional graphic. Typically this would be the name of the organization/company. Its width is set to 87% in order to accommodate the `_graphic`. It expands to 100% when no `_graphic.src` is provided. This style can be altered in `aboutUs.less`.
 
+####_aboutUsItems
+A list of any number of title/description pairs that appear between the company name and the social links.
+
+>#####title
+>The text that appears as a section header and that toggles open and close the text that appears below it. HTML is acceptable.
+>#####description
+>The text that appears below the `title`. It is open and closed when the user clicks on its `title`. HTML is acceptable.
 
 ##Installation
 
