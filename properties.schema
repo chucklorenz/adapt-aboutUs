@@ -1,0 +1,84 @@
+{
+  "type":"object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "required":false,
+  "properties":{
+    "pluginLocations": {
+      "type":"object",
+      "required":true,
+      "properties":{
+        "config": {
+          "type":"object"
+        },
+        "course": {
+          "type":"object",
+          "properties":{
+            "_aboutUs": {
+              "type":"object",
+              "required":true,
+              "properties":{
+                "title": {
+                  "type":"string",
+                  "title":"Glossary title"
+                },
+                "description": {
+                  "type":"string",
+                  "title":"Glossary description"
+                },
+                "searchPlaceholder": {
+                  "type":"string",
+                  "title":"Search place holder text"
+                },
+                "itemNotFoundMessage": {
+                  "type":"string",
+                  "title":"No results message"
+                },
+                "_isEnabled": {
+                  "type":"boolean",
+                  "required":true,
+                  "title":"Enabled"
+                },
+                "_glossaryItems": {
+                  "type":"array",
+                  "required":true,
+                  "title":"Glossary items",
+                  "minItems": 1,
+                  "items":
+                  {
+                    "type":"object",
+                    "required":true,
+                    "properties":{
+                      "description": {
+                        "type":"string",
+                        "title":"Description"
+                      },
+                      "term": {
+                        "type":"string",
+                        "required":true,
+                        "title":"Term",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "contentobject": {
+          "type":"object"
+        },
+        "article": {
+          "type":"object"
+        },
+        "block": {
+          "type":"object"
+        },
+        "component": {
+          "type":"object"
+        }
+      }
+    }
+  }
+}
