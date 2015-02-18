@@ -55,14 +55,13 @@ Optional icons linked to social media/networking accounts.
 >#####_service
 >The name of the social media service. The extension's code will link the `_service` to its icon; therefore, it must be spelled exactly as it appears in this list:
 
-| Supported Services |  |  |
+| Supported Services |  |  |  |  |
 | ------ | ------ | ------ |
-| Twitter | Facebook | LinkedIn |
-|GooglePlus|YouTube|Pinterest|
-Instagram|Vimeo|flickr
-Picasa|Lanyrd|DeviantArt
-Steam|Blogger|Tumblr
-SoundCloud|XING|feed
+| Twitter | Facebook | LinkedIn | GooglePlus | YouTube |
+|Pinterest|Instagram|Vimeo|flickr|Picasa|
+|Lanyrd|DeviantArt|Steam|Blogger|Tumblr|
+|SoundCloud|XING|feed|||
+
 >_link
 >
 
