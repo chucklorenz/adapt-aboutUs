@@ -52,9 +52,10 @@ A list of any number of title/description pairs that appears between the company
 
 ####_socialLinks
 Optional icons linked to social media/networking accounts.
->_service
+>#####_service
 >The name of the social media service. The extension's code will link the `_service` to its icon; therefore, it must be spelled exactly as it appears in this list:
->Supported Services
+>Supported Services||
+------|------|------
 Twitter|Facebook|LinkedIn
 GooglePlus|YouTube|Pinterest
 Instagram|Vimeo|flickr
