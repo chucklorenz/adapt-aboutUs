@@ -20,29 +20,44 @@
               "properties":{
                 "title": {
                   "type":"string",
-                  "title":"Glossary title"
+                  "required":true,
+                  "title":"Drawer title"
                 },
                 "description": {
                   "type":"string",
-                  "title":"Glossary description"
-                },
-                "searchPlaceholder": {
-                  "type":"string",
-                  "title":"Search place holder text"
-                },
-                "itemNotFoundMessage": {
-                  "type":"string",
-                  "title":"No results message"
-                },
-                "_isEnabled": {
-                  "type":"boolean",
                   "required":true,
-                  "title":"Enabled"
+                  "title":"Drawer description"
                 },
-                "_glossaryItems": {
+                "_graphic": {
+                  "type":"object",
+                  "required":true,
+                  "properties":{
+                    "src": {
+                      "type":"string",
+                      "required":false,
+                      "title":"Path to image"
+                    },
+                    "alt": {
+                      "type":"string",
+                      "required":false,
+                      "title":"Content of the image alt attribute"
+                    },
+                    "title": {
+                      "type":"string",
+                      "required":false,
+                      "title":"Content of the image title attribute"
+                    }
+                  }
+                },
+                "headline": {
+                  "type":"string",
+                  "required":true,
+                  "title":"Organization name or headline"
+                },
+                "_aboutUsItems": {
                   "type":"array",
-                  "required":true,
-                  "title":"Glossary items",
+                  "required":false,
+                  "title":"Section items",
                   "minItems": 1,
                   "items":
                   {
@@ -51,12 +66,36 @@
                     "properties":{
                       "description": {
                         "type":"string",
-                        "title":"Description"
+                        "required":true,
+                        "title":"Section description"
                       },
-                      "term": {
+                      "title": {
                         "type":"string",
                         "required":true,
-                        "title":"Term",
+                        "title":"Section title",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "_socialLinks": {
+                  "type":"array",
+                  "required":false,
+                  "title":"Section items",
+                  "minItems": 1,
+                  "items": {
+                    "type":"object",
+                    "required":true,
+                    "properties":{
+                      "_link": {
+                        "type":"string",
+                        "required":false,
+                        "title":"URL to your account"
+                      },
+                      "_service": {
+                        "type":"string",
+                        "required":true,
+                        "title":"Name of social networking service",
                         "minLength": 1
                       }
                     }
