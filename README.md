@@ -9,7 +9,8 @@ It works, but not yet ready for installation through the authoring tool. Hasn't 
 
 ##Issues
 
-- Installation requires the included fonts to be moved manually to adapt/css/fonts. (Issue [#538](https://github.com/adaptlearning/adapt_framework/issues/538) requests that the Adapt framework include a grunt task accomplish this.)
+- Installation requires the included fonts to be moved manually to build/adapt/css/fonts. This will not be necessary with framework v2.0.
+- ex-logo.png is an example logo that can be moved into place in src/course/en/images
 - Accessibility has not been addressed.
 
 ##Usage
