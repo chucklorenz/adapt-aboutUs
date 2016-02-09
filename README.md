@@ -1,7 +1,6 @@
 <!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/chucklorenz/adapt-aboutUs/issues" data-icon="octicon-issue-opened" data-style="mega" data-count-api="/repos/chucklorenz/adapt-aboutUs#open_issues_count" data-count-aria-label="# issues on GitHub" aria-label="Issue chucklorenz/adapt-aboutUs on GitHub">Issue</a>
-<!-- Place this tag right after the last button or just before your close body tag. -->
-<script async defer id="github-bjs" src="https://buttons.github.io/buttons.js"></script>
+
 
 #adapt-aboutUs
 
