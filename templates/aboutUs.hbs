@@ -2,7 +2,7 @@
 <div class="aboutus-inner">
     <div class="aboutus-header-container">
         {{#if _graphic.src}}
-            <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" title="{{_graphic.title}}"/>
+            <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" />
         {{/if}}
         <div class="aboutus-headline-container">
             <h5 class="aboutus-headline" {{#unless _graphic.src}}width="100%"{{/unless}}>{{{headline}}}</h5>

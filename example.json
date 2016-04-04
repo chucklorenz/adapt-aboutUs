@@ -4,8 +4,7 @@
     "description": "Get to know us better",
     "_graphic": {
         "src": "course/en/images/ex-logo.png",
-        "alt": "company logo depicting the top half of a star",
-        "title": "company logo"
+        "alt": "company logo depicting the top half of a star"
     },
     "headline": "Learning Light, Ltd.",
     "_aboutUsItems": [
