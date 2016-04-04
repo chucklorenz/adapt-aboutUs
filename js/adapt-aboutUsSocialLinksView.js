@@ -18,7 +18,7 @@ define(function(require) {
         },
 
         render: function() {
-            var modelData = this.model.toJSON();
+            var modelData = this.model;
             var template = Handlebars.templates["aboutUsSocialLinks"];
             this.$el.html(template(modelData));
             _.defer(_.bind(function() {

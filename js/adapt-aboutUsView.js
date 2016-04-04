@@ -41,7 +41,7 @@ define(function(require) {
         },
 
         renderSocialLinks: function(container) {
-            new SocialLinksView({model: this.options.sociallinks}).$el.appendTo(container);
+            new SocialLinksView({model: Adapt.course.get('_aboutUs')._socialLinks}).$el.appendTo(container);
         },
 
         postRender: function() {
