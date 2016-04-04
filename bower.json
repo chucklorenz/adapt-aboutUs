@@ -1,6 +1,7 @@
 {
   "name": "adapt-aboutUs",
   "version": "1.0.1",
+  "framework": "^2.0.0",
   "homepage": "https://github.com/chucklorenz/adapt-aboutUs",
   "authors": [
     "Chuck Lorenz <chucklorenz@yahoo.com>"
