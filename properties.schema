@@ -15,74 +15,14 @@
           "type":"object",
           "properties":{
             "_aboutUs": {
+              "legend": "About Us",
               "type":"object",
-              "required":true,
+              "required":false,
               "properties":{
-                "title": {
-                  "type":"string",
-                  "required":true,
-                  "title":"Drawer title"
-                },
-                "description": {
-                  "type":"string",
-                  "required":true,
-                  "title":"Drawer description"
-                },
-                "_graphic": {
-                  "type":"object",
-                  "required":true,
-                  "properties":{
-                    "src": {
-                      "type":"string",
-                      "required":false,
-                      "title":"Path to image"
-                    },
-                    "alt": {
-                      "type":"string",
-                      "required":false,
-                      "title":"Content of the image alt attribute"
-                    },
-                    "title": {
-                      "type":"string",
-                      "required":false,
-                      "title":"Content of the image title attribute"
-                    }
-                  }
-                },
-                "headline": {
-                  "type":"string",
-                  "required":true,
-                  "title":"Organization name or headline"
-                },
-                "_aboutUsItems": {
-                  "type":"array",
-                  "required":false,
-                  "title":"Section items",
-                  "minItems": 1,
-                  "items":
-                  {
-                    "type":"object",
-                    "required":true,
-                    "properties":{
-                      "description": {
-                        "type":"string",
-                        "required":true,
-                        "title":"Section description"
-                      },
-                      "title": {
-                        "type":"string",
-                        "required":true,
-                        "title":"Section title",
-                        "minLength": 1
-                      }
-                    }
-                  }
-                },
                 "_socialLinks": {
                   "type":"array",
                   "required":false,
-                  "title":"Section items",
-                  "minItems": 1,
+                  "title":"Social links",
                   "items": {
                     "type":"object",
                     "required":true,
@@ -90,16 +30,91 @@
                       "_link": {
                         "type":"string",
                         "required":false,
-                        "title":"URL to your account"
+                        "default": "",
+                        "title":"URL to your account",
+                        "inputType": "Text",
+                        "validators": []
                       },
                       "_service": {
                         "type":"string",
-                        "required":true,
+                        "required":false,
+                        "default": "",
                         "title":"Name of social networking service",
-                        "minLength": 1
+                        "inputType": {"type": "Select", "options": ["Twitter", "Facebook", "LinkedIn", "GooglePlus", "YouTube", "Pinterest", "Instagram", "Vimeo", "flickr", "Picasa", "Lanyrd", "DeviantArt", "Steam", "Blogger", "Tumblr", "SoundCloud", "XING", "Feed"]}
                       }
                     }
                   }
+                },
+                "_aboutUsItems": {
+                  "type":"array",
+                  "required":false,
+                  "title":"Text items",
+                  "items": {
+                    "type":"object",
+                    "required":true,
+                    "properties":{
+                      "description": {
+                        "type":"string",
+                        "required":false,
+                        "default": "",
+                        "title":"Item description",
+                        "inputType": "Text",
+                        "validators": []
+                      },
+                      "title": {
+                        "type":"string",
+                        "required":false,
+                        "default": "",
+                        "title":"Item title",
+                        "inputType": "Text",
+                        "validators": []
+                      }
+                    }
+                  }
+                },
+                "_graphic": {
+                  "type":"object",
+                  "required":false,
+                  "title": "Optional graphic",
+                  "properties":{
+                    "alt": {
+                      "type":"string",
+                      "required":false,
+                      "default": "",
+                      "title": "Alt text",
+                      "inputType": "Text",
+                      "validators": [],
+                      "help": "Text for the alt attribute of this image"
+                    },
+                    "src": {
+                      "type":"string",
+                      "required":false,
+                      "default": "",
+                      "inputType": "Asset:image",
+                      "validators": []
+                    }
+                  }
+                },
+                "headline": {
+                  "type":"string",
+                  "required":false,
+                  "default": "",
+                  "title":"Organization name or headline",
+                  "inputType": "Text",
+                  "validators": []
+                },
+                "description": {
+                  "type":"string",
+                  "required":true,
+                  "title":"Drawer description",
+                  "inputType": "Text"
+                },
+                "title": {
+                  "type":"string",
+                  "required":true,
+                  "title":"Drawer title",
+                  "default": "About Us",
+                  "inputType": "Text"
                 }
               }
             }
