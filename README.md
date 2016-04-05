@@ -71,7 +71,7 @@ Optional icons linked to social media/networking accounts.
 |Lanyrd|DeviantArt|Steam|Blogger|Tumblr|
 |SoundCloud|XING|Feed|||
 
->_link
+>#####_link  
 >The URL that will be followed if a user clicks on the icon. It should take the form of a fully qualified internet address, including any parameters that identify the account. If the `_link` is not provided, the icon will not be displayed. If you don't want any icons to appear, don't provide any `_links`. You can, in fact, omit from `course.json` the complete `_socialLinks` section.
 
 ##Limitations
