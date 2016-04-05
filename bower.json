@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "framework": "^2.0.0",
   "homepage": "https://github.com/chucklorenz/adapt-aboutUs",
+  "issues": "https://github.com/chucklorenz/adapt-aboutUs/issues",
   "authors": [
     "Chuck Lorenz <chucklorenz@yahoo.com>"
   ],
