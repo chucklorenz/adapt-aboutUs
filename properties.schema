@@ -59,7 +59,8 @@
                         "default": "",
                         "title":"Item description",
                         "inputType": "Text",
-                        "validators": []
+                        "validators": [],
+                        "translatable": true
                       },
                       "title": {
                         "type":"string",
@@ -67,7 +68,8 @@
                         "default": "",
                         "title":"Item title",
                         "inputType": "Text",
-                        "validators": []
+                        "validators": [],
+                        "translatable": true
                       }
                     }
                   }
@@ -84,7 +86,8 @@
                       "title": "Alt text",
                       "inputType": "Text",
                       "validators": [],
-                      "help": "Text for the alt attribute of this image"
+                      "help": "Text for the alt attribute of this image",
+                      "translatable": true
                     },
                     "src": {
                       "type":"string",
@@ -101,20 +104,23 @@
                   "default": "",
                   "title":"Organization name or headline",
                   "inputType": "Text",
-                  "validators": []
+                  "validators": [],
+                  "translatable": true
                 },
                 "description": {
                   "type":"string",
                   "required":true,
                   "title":"Drawer description",
-                  "inputType": "Text"
+                  "inputType": "Text",
+                  "translatable": true
                 },
                 "title": {
                   "type":"string",
                   "required":true,
                   "title":"Drawer title",
                   "default": "About Us",
-                  "inputType": "Text"
+                  "inputType": "Text",
+                  "translatable": true
                 }
               }
             }
