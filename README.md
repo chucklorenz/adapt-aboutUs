@@ -78,6 +78,9 @@ Optional icons linked to social media/networking accounts.
 ##Limitations
  
  - Accessibility and RTL support have not been addressed.
+ 
+##Thanks 
+Thanks to [Zheng Xu](https://github.com/samumist) for the addition of Chinese services.
 
 
 
