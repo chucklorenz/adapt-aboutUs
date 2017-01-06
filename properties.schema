@@ -19,60 +19,29 @@
               "type":"object",
               "required":false,
               "properties":{
-                "_socialLinks": {
-                  "type":"array",
-                  "required":false,
-                  "title":"Social links",
-                  "items": {
-                    "type":"object",
-                    "required":true,
-                    "properties":{
-                      "_link": {
-                        "type":"string",
-                        "required":false,
-                        "default": "",
-                        "title":"URL to your account",
-                        "inputType": "Text",
-                        "validators": []
-                      },
-                      "_service": {
-                        "type":"string",
-                        "required":false,
-                        "default": "",
-                        "title":"Name of social networking service",
-                        "inputType": {"type": "Select", "options": ["Twitter", "Facebook", "LinkedIn", "GooglePlus", "YouTube", "Pinterest", "Instagram", "Vimeo", "flickr", "Picasa", "Lanyrd", "DeviantArt", "Steam", "Blogger", "Tumblr", "SoundCloud", "XING", "Feed"]}
-                      }
-                    }
-                  }
+                "title": {
+                  "type":"string",
+                  "required":true,
+                  "title":"Drawer title",
+                  "default": "About Us",
+                  "inputType": "Text",
+                  "translatable": true
                 },
-                "_aboutUsItems": {
-                  "type":"array",
+                "description": {
+                  "type":"string",
+                  "required":true,
+                  "title":"Drawer description",
+                  "inputType": "Text",
+                  "translatable": true
+                },
+                "headline": {
+                  "type":"string",
                   "required":false,
-                  "title":"Text items",
-                  "items": {
-                    "type":"object",
-                    "required":true,
-                    "properties":{
-                      "description": {
-                        "type":"string",
-                        "required":false,
-                        "default": "",
-                        "title":"Item description",
-                        "inputType": "Text",
-                        "validators": [],
-                        "translatable": true
-                      },
-                      "title": {
-                        "type":"string",
-                        "required":false,
-                        "default": "",
-                        "title":"Item title",
-                        "inputType": "Text",
-                        "validators": [],
-                        "translatable": true
-                      }
-                    }
-                  }
+                  "default": "",
+                  "title":"Organization name or headline",
+                  "inputType": "Text",
+                  "validators": [],
+                  "translatable": true
                 },
                 "_graphic": {
                   "type":"object",
@@ -98,29 +67,60 @@
                     }
                   }
                 },
-                "headline": {
-                  "type":"string",
+                "_aboutUsItems": {
+                  "type":"array",
                   "required":false,
-                  "default": "",
-                  "title":"Organization name or headline",
-                  "inputType": "Text",
-                  "validators": [],
-                  "translatable": true
+                  "title":"Text items",
+                  "items": {
+                    "type":"object",
+                    "required":true,
+                    "properties":{
+                      "title": {
+                          "type":"string",
+                          "required":false,
+                          "default": "",
+                          "title":"Item title",
+                          "inputType": "Text",
+                          "validators": [],
+                          "translatable": true
+                      },
+                      "description": {
+                        "type":"string",
+                        "required":false,
+                        "default": "",
+                        "title":"Item description",
+                        "inputType": "Text",
+                        "validators": [],
+                        "translatable": true
+                      }
+                    }
+                  }
                 },
-                "description": {
-                  "type":"string",
-                  "required":true,
-                  "title":"Drawer description",
-                  "inputType": "Text",
-                  "translatable": true
-                },
-                "title": {
-                  "type":"string",
-                  "required":true,
-                  "title":"Drawer title",
-                  "default": "About Us",
-                  "inputType": "Text",
-                  "translatable": true
+                "_socialLinks": {
+                  "type":"array",
+                  "required":false,
+                  "title":"Social links",
+                  "items": {
+                    "type":"object",
+                    "required":true,
+                    "properties":{
+                      "_link": {
+                        "type":"string",
+                        "required":false,
+                        "default": "",
+                        "title":"URL to your account",
+                        "inputType": "Text",
+                        "validators": []
+                      },
+                      "_service": {
+                        "type":"string",
+                        "required":false,
+                        "default": "",
+                        "title":"Name of social networking service",
+                        "inputType": {"type": "Select", "options": ["Twitter", "Facebook", "LinkedIn", "GooglePlus", "YouTube", "Pinterest", "Instagram", "Vimeo", "flickr", "Picasa", "Lanyrd", "DeviantArt", "Steam", "Blogger", "Tumblr", "SoundCloud", "XING", "Feed"]}
+                      }
+                    }
+                  }
                 }
               }
             }
