@@ -1,13 +1,13 @@
 .aboutus-item {
     display:block;
     margin-top:@item-spacing;
-    padding-left:@item-padding-left;
 
     .aboutus-item-open {
         display:block;
         text-decoration:none;
         color:@drawer-item-text-color;
         border-bottom:1px solid darken(@item-color, 10%);
+        padding-left:@item-padding-left;
 
         .no-touch &:hover {
             color:@drawer-item-text-hover-color;
@@ -15,11 +15,12 @@
         }
 
         .aboutus-item-title {
-            padding:@item-padding;
+            padding:@item-padding 0;
 
             h5 {
-                font-size:16px;
-                font-weight:@font-weight-bold;
+              font-size: 18px;
+              font-weight: inherit;
+              line-height: 140%;
             }
         }
     }
