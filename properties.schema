@@ -89,7 +89,7 @@
                         "required":false,
                         "default": "",
                         "title":"Item description",
-                        "inputType": "Text",
+                        "inputType": "TextArea",
                         "validators": [],
                         "translatable": true
                       }
