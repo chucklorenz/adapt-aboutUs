@@ -1,16 +1,16 @@
 
 
 
-#adapt-aboutUs
+# adapt-aboutUs
 
 An Adapt extension that adds to the Drawer information about the sponsoring organization.
 ![An example of the aboutUs extension.](https://github.com/chucklorenz/adapt-aboutUs/raw/master/clip.png "example aboutUs")  
 
-##Usage
+## Usage
 
 This extension adds an item to the Drawer. All text is replaceable/customizable. Graphic/logo that appears in front of the organization is optional. Social links are optional, but are restricted to the icons available within the extension (see list below). Between the name of the organization and the social links, any number of title/description items maybe configured. The above titles ("Our Mission," "Contact Us," "Find Us," "Partner with Us") are simply examples. What is seen in the image above is simply an example.
 
-##Installation
+## Installation
 
 * With the [Adapt CLI](https://github.com/adaptlearning/adapt-cli) installed, run the following from the command line:  
 `adapt install adapt-aboutUs`
@@ -28,40 +28,40 @@ This extension adds an item to the Drawer. All text is replaceable/customizable.
 
 The attributes listed below are used in *course.json* to configure **About Us**, and are properly formatted as JSON in [*example.json*](https://github.com/chucklorenz/adapt-aboutUs/blob/master/example.json).  
 
-####_aboutUs
+#### _aboutUs
 
 The name of the extension object as used in the `course.json` file.
 
-####title, description
+#### title, description
 
 The short texts that appear when the Drawer opens. They link to the example view seen in the image above.
 
-####headline  
+#### headline  
 
 The text of the first line that appears to the right of the optional graphic. Typically this would be the name of the organization/company. Its width is set to 87% in order to accommodate the `_graphic`. It expands to 100% when no `_graphic.src` is provided. This style can be altered in `aboutUs.less`.
 
-####_graphic
+#### _graphic
 
 The optional image that appears to the left of the organization's name (the `headline`). *An example image is included (ex-logo.png). Its dimensions are 30px x 30px.*
 
->#####src
+>##### src
 >The path to the image. If it is not provided, no image will be displayed.  
 
->#####alt
+>##### alt
 >The content of image's `alt` attribute.
 
-####_aboutUsItems
+#### _aboutUsItems
 A list of any number of title/description text pairs that appears between the company name and the social links.
 
->#####title
+>##### title
 >The text that appears as a section header and that toggles open and close the text that appears below it. HTML is acceptable.  
 
->#####description
+>##### description
 >The text that appears below the `title`. It is open and closed when the user clicks on its `title`. HTML is acceptable.
 
-####_socialLinks
+#### _socialLinks
 Optional icons linked to social media/networking accounts.
->#####_service
+>##### _service
 >The name of the social media service. The extension's code will link the `_service` to its icon; therefore, it must be spelled exactly as it appears in this list:
 
 | Supported Services |  |  |  |  |
@@ -72,14 +72,14 @@ Optional icons linked to social media/networking accounts.
 |SoundCloud|XING|Feed|qq|sina-weibo|
 |tengxun-weibo|wechat|youku|||
 
->#####_link  
+>##### _link  
 >The URL that will be followed if a user clicks on the icon. It should take the form of a fully qualified internet address, including any parameters that identify the account. If the `_link` is not provided, the icon will not be displayed. If you don't want any icons to appear, don't provide any `_links`. You can, in fact, omit from `course.json` the complete `_socialLinks` section.
 
-##Limitations
+## Limitations
  
  - Accessibility and RTL support have not been addressed.
  
-##Thanks 
+## Thanks 
 Thanks to [Zheng Xu](https://github.com/samumist) for the addition of Chinese services.
 
 
