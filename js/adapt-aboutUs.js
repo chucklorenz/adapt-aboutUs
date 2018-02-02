@@ -33,7 +33,8 @@ define(function(require) {
             var drawerObject = {
                 title: courseAboutUs.title,
                 description: courseAboutUs.description,
-                className: 'aboutus-drawer'
+                className: 'aboutus-drawer',
+                drawerOrder: courseAboutUs._drawerOrder || 0
             };
             Adapt.drawer.addItem(drawerObject, 'aboutUs:showAboutUs');
             setupAboutUs(courseAboutUs, courseAboutUs._aboutUsItems, courseAboutUs._socialLinks);
