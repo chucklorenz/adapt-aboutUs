@@ -19,6 +19,15 @@
               "type":"object",
               "required":false,
               "properties":{
+              "_drawerOrder": {
+                  "type": "number",
+                  "required": false,
+                  "title": "Drawer order",
+                  "inputType": "Number",
+                  "default": 0,
+                  "help": "The order in which this extension should appear as a drawer item",
+                  "validators": ["number"]
+                },
                 "title": {
                   "type":"string",
                   "required":true,
