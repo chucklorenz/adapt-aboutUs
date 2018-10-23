@@ -26,10 +26,10 @@ define(function(require) {
 
     }
 
-    Adapt.once('app:dataReady', function() {
+    Adapt.on('adapt:start', function() {
         var courseAboutUs = Adapt.course.get('_aboutUs');
 
-        if(courseAboutUs) {
+        if (courseAboutUs) {
             var drawerObject = {
                 title: courseAboutUs.title,
                 description: courseAboutUs.description,
