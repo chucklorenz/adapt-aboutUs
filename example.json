@@ -1,5 +1,6 @@
 // To go in the course.json file
 "_aboutUs": {
+    "_isEnabled": true,
     "title": "About Us",
     "description": "Get to know us better",
     "_graphic": {

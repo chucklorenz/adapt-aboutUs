@@ -1,17 +1,21 @@
 /*
- * adapt-aboutUsSocialLinksView
+ * adapt-aboutUs
  * License - https://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
- * Maintainers - Chuck Lorenz <chucklorenz@yahoo.com>
- * Code was based on adapt-contrib-glossary
+ * Maintainers - Chuck Lorenz <chuck.lorenz@clearlearning.tech>
+ * Code was based on adapt-contrib-glossary and adapt-contrib-resources
  */
-define(function(require) {
 
-    var Backbone = require('backbone');
-    var Adapt = require('coreJS/adapt');
+define([
+    'core/js/adapt'
+], function(Adapt) {
 
     var AboutUsSocialLinksView = Backbone.View.extend({
 
-        className: "aboutus-item",
+        className: "aboutus__item",
+
+        attributes: {
+            role: 'listitem'
+        },
 
         initialize: function() {
             this.render();
