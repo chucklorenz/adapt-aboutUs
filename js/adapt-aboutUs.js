@@ -1,47 +1,51 @@
 /*
  * adapt-aboutUs
  * License - https://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
- * Maintainers - Chuck Lorenz <chucklorenz@yahoo.com>
- * Code was based on adapt-contrib-glossary
+ * Maintainers - Chuck Lorenz <chuck.lorenz@clearlearning.tech>
+ * Code was based on adapt-contrib-glossary and adapt-contrib-resources
  */
-define(function(require) {
 
-    var Adapt = require('coreJS/adapt');
-    var Backbone = require('backbone');
-    var AboutUsView = require('extensions/adapt-aboutUs/js/adapt-aboutUsView');
+define([
+    'core/js/adapt',
+    './adapt-aboutUsView'
+], function(Adapt, AboutUsView) {
 
     function setupAboutUs(aboutUsModel, aboutUsItems, socialLinks) {
 
         var aboutUsModel = new Backbone.Model(aboutUsModel);
-        var aboutUsCollection = new Backbone.Collection(aboutUsItems);
+        var itemsCollection = new Backbone.Collection(aboutUsItems);
         var socialLinksCollection = new Backbone.Collection(socialLinks);
 
-        Adapt.on('aboutUs:showAboutUs', function() {
-            Adapt.drawer.triggerCustomView(new AboutUsView({
-                model: aboutUsModel,
-                collection: aboutUsCollection,
-                sociallinks: socialLinksCollection
-            }).$el);
-        });
+        var options = {
+            model: aboutUsModel,
+            collection: itemsCollection,
+            sociallinks: socialLinksCollection
+        };
 
+        Adapt.on('aboutUs:showAboutUs', function() {
+            Adapt.drawer.triggerCustomView(new AboutUsView(options).$el);
+        });
     }
 
-    Adapt.once('app:dataReady', function() {
+    function initAboutUs() {
         var courseAboutUs = Adapt.course.get('_aboutUs');
 
-        if(courseAboutUs) {
-            var drawerObject = {
-                title: courseAboutUs.title,
-                description: courseAboutUs.description,
-                className: 'aboutus-drawer',
-                drawerOrder: courseAboutUs._drawerOrder || 0
-            };
-            Adapt.drawer.addItem(drawerObject, 'aboutUs:showAboutUs');
-            setupAboutUs(courseAboutUs, courseAboutUs._aboutUsItems, courseAboutUs._socialLinks);
-        } else {
-            console.log('The aboutUs extension is not configured in the course.json file.');
+        if (!courseAboutUs || !courseAboutUs._isEnabled) {
+            return;
         }
 
-    });
+        var drawerObject = {
+            title: courseAboutUs.title,
+            description: courseAboutUs.description,
+            className: 'is-aboutus',
+            drawerOrder: courseAboutUs._drawerOrder || 0
+        };
+
+        Adapt.drawer.addItem(drawerObject, 'aboutUs:showAboutUs');
+
+        setupAboutUs(courseAboutUs, courseAboutUs._aboutUsItems, courseAboutUs._socialLinks);
+    }
+
+    Adapt.on('app:dataReady', initAboutUs);
 
 });

@@ -1,36 +1,33 @@
 .aboutus {
 
-    .aboutus-header-container {
-        display:block;
-        border-bottom:1px solid darken(@item-color, 10%);
-        padding-left: 10px;
+  &__header-container {
+    display: flex;
+    border-bottom: 1px solid @drawer-item-hover;
+    padding: @item-padding;
+    color: @drawer-item-inverted;
 
         img {
             display:inline-block;
-            margin-right: 5px;
+      margin-right: @item-margin;
             vertical-align: middle;
+      min-width: unset;
+      max-width: unset;
+    }
         }
 
-        .aboutus-headline-container {
+  &__headline {
             display:inline-block;
-
-            h5 {
-                font-size: 18px;
-                font-weight: inherit;
-                line-height: 140%;
-                padding: 20px 20px 20px 0;
-
-                .aboutus-headline {
-                    display:inline-block;
                     width:87%;
-                }
-            }
 
+    &-inner {
+      font-size: 1.4rem;
+      font-weight: inherit;
+      line-height: 1.4;
         }
 
     }
 
-    .aboutus-items-container {
+  &__items-container {
         display:block;
     }
 

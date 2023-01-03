@@ -1,9 +1,8 @@
-{{! Maintainer - Chuck Lorenz <chucklorenz@yahoo.com>}}
-<div class="aboutus-sociallinks">
+<div class="aboutus__sociallinks" role="list">
 {{#each this}}
     {{#if _link}}
-        <a href="{{{_link}}}" class="icon icon-{{lowerCase _service}}"
-        target="_blank" title="Follow us on {{{_service}}}"></a>
+        <a href="{{{_link}}}" class="icon icon-{{lowercase _service}}" role="listitem"
+        target="_blank" title="Follow us on {{{_service}}}" aria-label="Follow us on {{{_service}}}"></a>
     {{/if}}
 {{/each}}
 </div>

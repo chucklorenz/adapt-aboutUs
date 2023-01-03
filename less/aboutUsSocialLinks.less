@@ -1,28 +1,32 @@
 @font-face {
   font-family: 'adapt-aboutus';
-  src:url('fonts/adapt-aboutus.eot?-y1xi0d');
-  src:url('fonts/adapt-aboutus.eot?#iefix-y1xi0d') format('embedded-opentype'),
-      url('fonts/adapt-aboutus.woff?-y1xi0d') format('woff'),
-      url('fonts/adapt-aboutus.ttf?-y1xi0d') format('truetype'),
-      url('fonts/adapt-aboutus.svg?-y1xi0d#adapt-aboutus') format('svg');
+  src: url('fonts/adapt-aboutus.eot');
+  src: url('fonts/adapt-aboutus.eot') format('embedded-opentype'),
+  url('fonts/adapt-aboutus.woff') format('woff'),
+  url('fonts/adapt-aboutus.ttf') format('truetype'),
+  url('fonts/adapt-aboutus.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
-.aboutus-item {
 
-  .aboutus-sociallinks {
+.aboutus__sociallinks {
+  display: flex;
       padding:@item-padding;
 
-      .icon {
-          color:@drawer-icon-color;
+  a {
+    text-decoration: none;
+  }
+
+  .icon:before {
+    color: @drawer-icon-inverted;
           display: inline-block;
           font-family: 'adapt-aboutus';
-          font-size: 30px;
-          margin: 0 10px 10px 0;
+    font-size: 2rem;
+    margin: 0 0.75rem 0.75rem 0;
 
           .no-touch &:hover {
-              color:@drawer-icon-hover-color;
+      color: @drawer-icon-inverted-hover;
           }
       }
 
@@ -119,5 +123,3 @@
       }
 
   }
-
-}

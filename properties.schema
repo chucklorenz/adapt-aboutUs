@@ -19,6 +19,21 @@
               "type":"object",
               "required":false,
               "properties":{
+                                "_isEnabled": {
+                                    "type": "boolean",
+                                    "required": true,
+                                    "title": "Enable About Us",
+                                    "default": false,
+                                    "inputType": {
+                                        "type": "Boolean",
+                                        "options": [
+                                            false,
+                                            true
+                                        ]
+                                    },
+                                    "validators": [],
+                                    "help": "If set to 'true', the About Us extension will be enabled"
+                                },
               "_drawerOrder": {
                   "type": "number",
                   "required": false,
@@ -97,7 +112,7 @@
                         "type":"string",
                         "required":false,
                         "default": "",
-                        "title":"Item description",
+                        "title": "Item body",
                         "inputType": "TextArea",
                         "validators": [],
                         "translatable": true
@@ -108,7 +123,7 @@
                 "_socialLinks": {
                   "type":"array",
                   "required":false,
-                  "title":"Social links",
+                  "title": "Social media links",
                   "items": {
                     "type":"object",
                     "required":true,
