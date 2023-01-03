@@ -8,7 +8,7 @@ An Adapt extension that adds to the Drawer information about the sponsoring orga
 
 ## Usage
 
-This extension adds an item to the Drawer. All text is replaceable/customizable. Graphic/logo that appears in front of the organization is optional. Social links are optional, but are restricted to the icons available within the extension (see list below). Between the name of the organization and the social links, any number of title/description items maybe configured. The above titles ("Our Mission," "Contact Us," "Find Us," "Partner with Us") are simply examples. What is seen in the image above is simply an example.
+This extension adds an item to the Drawer. All text is replaceable/customizable. Graphic/logo that appears in front of the organization is optional. Social media links are optional, but are restricted to the icons available within the extension (see list below). Between the name of the organization and the social media links, any number of title/description items maybe configured. The above titles ("Our Mission," "Contact Us," "Find Us," "Partner with Us") are simply examples. What is seen in the image above is simply an example.
 
 ## Installation
 
@@ -31,6 +31,9 @@ The attributes listed below are used in *course.json* to configure **About Us**,
 #### _aboutUs
 
 The name of the extension object as used in the `course.json` file.
+
+#### _isEnabled  
+Enable or disable **About Us** by setting this property to `true` or `false`.
 
 #### title, description
 
@@ -77,10 +80,14 @@ Optional icons linked to social media/networking accounts.
 
 ## Limitations
  
- - Accessibility and RTL support have not been addressed.
+ - Accessibility and RTL support have not been thoroughly tested.
  
 ## Thanks 
 Thanks to [Zheng Xu](https://github.com/samumist) for the addition of Chinese services.
+
+----------------------------
+**Version number:**  2.0.0     
+**Framework versions:**  5+ 
 
 
 

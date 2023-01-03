@@ -1,0 +1,13 @@
+build
+docs
+bower_components
+node_modules
+.DS_Store
+.ideanode_modules
+.idea
+npm-debug.log
+src/components/*.zip
+src/extensions/*.zip
+src/menu/*.zip
+src/course/*.zip
+src/theme/*.zip

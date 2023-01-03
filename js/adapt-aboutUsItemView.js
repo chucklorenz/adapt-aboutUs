@@ -1,26 +1,33 @@
 /*
- * adapt-aboutUsItemView
+ * adapt-aboutUs
  * License - https://github.com/adaptlearning/adapt_framework/blob/master/LICENSE
- * Maintainers - Chuck Lorenz <chucklorenz@yahoo.com>
- * Code was based on adapt-contrib-glossary
+ * Maintainers - Chuck Lorenz <chuck.lorenz@clearlearning.tech>
+ * Code was based on adapt-contrib-glossary and adapt-contrib-resources
  */
-define(function(require) {
 
-    var Backbone = require('backbone');
-    var Adapt = require('coreJS/adapt');
+define([
+    'core/js/adapt'
+], function(Adapt) {
 
     var AboutUsItemView = Backbone.View.extend({
 
-        className: "aboutus-item",
+        className: "aboutus__item",
+
+        attributes: {
+            role: 'listitem'
+        },
 
         events: {
-            'click a.aboutus-item-open': 'onAboutUsItemClicked'
+            'click .js-aboutus-item-topic-click': 'onAboutUsItemClicked'
         },
 
         initialize: function() {
+            this.listenTo(Adapt, {
+                'remove drawer:closed': this.remove,
+                'aboutUs:descriptionOpen': this.descriptionOpen
+            });
             this.setupModel();
-            this.listenTo(Adapt, 'aboutUs:descriptionOpen', this.descriptionOpen);
-            this.model.on('change:_isVisible', this.onAboutUsItemVisibilityChange, this);
+            this.listenTo(this.model, 'change:_isVisible', this.onAboutUsItemVisibilityChange);
             this.render();
         },
 
@@ -32,9 +39,8 @@ define(function(require) {
         },
 
         render: function() {
-            var modelData = this.model.toJSON();
-            var template = Handlebars.templates["aboutUsItem"];
-            this.$el.html(template(modelData));
+            var template = Handlebars.templates['aboutUsItem'];
+            this.$el.html(template(this.model.toJSON()));
             _.defer(_.bind(function() {
                 this.postRender();
             }, this));
@@ -42,18 +48,19 @@ define(function(require) {
         },
 
         postRender: function() {
-            this.listenTo(Adapt, 'drawer:openedItemView', this.remove);
-            this.listenTo(Adapt, 'drawer:triggerCustomView', this.remove);
+            this.listenTo(Adapt, {
+                'drawer:openedItemView': this.remove,
+                'drawer:triggerCustomView': this.remove
+            });
         },
 
         onAboutUsItemClicked: function(event) {
-            event.preventDefault();
+            event && event.preventDefault();
             Adapt.trigger('aboutUs:descriptionOpen', this.model.cid);
-            this.toggleAboutUsItemDescription();
         },
 
         toggleAboutUsItemDescription: function() {
-            if(this.model.get('_isDescriptionOpen')) {
+            if (this.model.get('_isDescriptionOpen')) {
                 this.hideAboutUsItemDescription();
             } else {
                 this.showAboutUsItemDescription();
@@ -61,29 +68,41 @@ define(function(require) {
         },
 
         showAboutUsItemDescription: function() {
-            this.$('.aboutus-item-description').slideDown(200);
+            var $aboutUsItemTopic = this.$('.js-aboutus-item-topic-click');
+            var description = $aboutUsItemTopic.addClass('is-selected')
+                .siblings('.aboutus__item-body')
+                .slideDown(200, function() {
+                    Adapt.a11y.focusFirst(this.$el, {defer: true});
+                }.this);
+            $aboutUsItemTopic.attr('aria-expanded', true);
             this.model.set('_isDescriptionOpen', true);
         },
 
         hideAboutUsItemDescription: function() {
-            this.$('.aboutus-item-description').stop(true, true).slideUp(200);
+            this.$('.aboutus__item-body').stop(true, true)
+                .slideUp(200);
             this.model.set('_isDescriptionOpen', false);
+
+            this.$('.js-aboutus-item-topic-click').removeClass('is-selected')
+                .attr('aria-expanded', false);
         },
 
         descriptionOpen: function(viewId) {
-            if(viewId != this.model.cid && this.model.get('_isDescriptionOpen')) {
+            if (viewId === this.model.cid) {
+                this.toggleAboutUsItemDescription();
+            } else if (this.model.get('_isDescriptionOpen')) {
                 this.hideAboutUsItemDescription();
             }
         },
 
         onAboutUsItemVisibilityChange: function() {
-            if(this.model.get('_isDescriptionOpen')) {
+            if (this.model.get('_isDescriptionOpen')) {
                 this.hideAboutUsItemDescription();
             }
-            if(this.model.get('_isVisible')) {
-                this.$el.removeClass('display-none');
+            if (this.model.get('_isVisible')) {
+                this.$el.removeClass('u-display-none');
             } else {
-                this.$el.addClass('display-none');
+                this.$el.addClass('u-display-none');
             }
         }
 
