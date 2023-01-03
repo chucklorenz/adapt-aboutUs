@@ -1,9 +1,9 @@
 {
   "name": "adapt-aboutUs",
-  "version": "1.2.1",
-  "framework": "^2.0.0",
-  "homepage": "https://github.com/chucklorenz/adapt-aboutUs",
-  "issues": "https://github.com/chucklorenz/adapt-aboutUs/issues",
+  "version": "1.3.0",
+  "framework": "^5.0.0",
+  "homepage": "https://github.com/LearningPool/adapt-aboutUs",
+  "issues": "https://github.com/LearningPool/adapt-aboutUs/issues",
   "authors": [
     "Chuck Lorenz <chucklorenz@yahoo.com>"
   ],
